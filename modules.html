@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modules &mdash; Avalanche Homology 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=e031e9a9"></script>
+      <script src="_static/doctools.js?v=888ff710"></script>
+      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Avalanche Homology’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Avalanche Homology
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#avalanche.Laplacian"><code class="docutils literal notranslate"><span class="pre">Laplacian()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#avalanche.avalanche_complex"><code class="docutils literal notranslate"><span class="pre">avalanche_complex()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#avalanche.avalanche_complex_original"><code class="docutils literal notranslate"><span class="pre">avalanche_complex_original()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#avalanche.avalanche_complex_persistence_diagram"><code class="docutils literal notranslate"><span class="pre">avalanche_complex_persistence_diagram()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#avalanche.is_stable"><code class="docutils literal notranslate"><span class="pre">is_stable()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#avalanche.out_degrees_matrix"><code class="docutils literal notranslate"><span class="pre">out_degrees_matrix()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#avalanche.run_avalanche_sandpile"><code class="docutils literal notranslate"><span class="pre">run_avalanche_sandpile()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Avalanche Homology</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Modules</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-avalanche">
+<span id="modules"></span><h1>Modules<a class="headerlink" href="#module-avalanche" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="avalanche.Laplacian">
+<span class="sig-prename descclassname"><span class="pre">avalanche.</span></span><span class="sig-name descname"><span class="pre">Laplacian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_deg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#avalanche.Laplacian" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the out-degree Laplacian matrix of a graph.</p>
+<p>The Laplacian is defined as</p>
+<div class="math notranslate nohighlight">
+\[L = D - A\]</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">D</span></code> is the diagonal matrix of out-degrees and <code class="docutils literal notranslate"><span class="pre">A</span></code> is the
+adjacency matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>M</strong> (<em>numpy.ndarray</em>) – Adjacency matrix of the graph.</p></li>
+<li><p><strong>out_deg</strong> (<em>numpy.ndarray</em>) – Array of vertex out-degrees.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Laplacian matrix of the graph.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="avalanche.avalanche_complex">
+<span class="sig-prename descclassname"><span class="pre">avalanche.</span></span><span class="sig-name descname"><span class="pre">avalanche_complex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sinks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">firings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_firings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persistence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_simplices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#avalanche.avalanche_complex" title="Permalink to this definition"></a></dt>
+<dd><p>Construct the nerve complex of the avalanche complex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>M</strong> (<em>numpy.ndarray</em>) – Adjacency matrix of the graph.</p></li>
+<li><p><strong>config</strong> (<em>list</em><em>[</em><em>int</em><em>] or </em><em>numpy.ndarray</em>) – Initial sandpile configuration.</p></li>
+<li><p><strong>sinks</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – Vertices connected to the sink.</p></li>
+<li><p><strong>firings</strong> (<em>int</em>) – Maximum number of firing steps to simulate.</p></li>
+<li><p><strong>print_firings</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, print firing sets during simulation.</p></li>
+<li><p><strong>persistence</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, assign filtration values and compute persistent homology.</p></li>
+<li><p><strong>return_simplices</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, also return a dictionary mapping simplex to firing sets.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Either:</p>
+<ul class="simple">
+<li><p>a <code class="docutils literal notranslate"><span class="pre">gudhi.SimplexTree</span></code> object, or</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(SimplexTree,</span> <span class="pre">simplex_dictionary)</span></code> if
+<code class="docutils literal notranslate"><span class="pre">return_simplices=True</span></code>.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>gudhi.SimplexTree or tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="avalanche.avalanche_complex_original">
+<span class="sig-prename descclassname"><span class="pre">avalanche.</span></span><span class="sig-name descname"><span class="pre">avalanche_complex_original</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sinks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">firings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_firings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persistence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#avalanche.avalanche_complex_original" title="Permalink to this definition"></a></dt>
+<dd><p>Construct the avalanche complex directly (as opposed to the nerve complex used above)</p>
+<p>This approach is significantly slower than the nerve approach implemented in avalanche_complex above</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>M</strong> (<em>numpy.ndarray</em>) – Adjacency matrix of the graph.</p></li>
+<li><p><strong>config</strong> (<em>list</em><em>[</em><em>int</em><em>] or </em><em>numpy.ndarray</em>) – Initial sandpile configuration.</p></li>
+<li><p><strong>sinks</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – Vertices connected to the sink.</p></li>
+<li><p><strong>steps</strong> (<em>int</em>) – Number of avalanche steps to simulate before recurrence checks.</p></li>
+<li><p><strong>firings</strong> (<em>int</em>) – Maximum total number of firings allowed.</p></li>
+<li><p><strong>print_firings</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, print firing sets and timestamps.</p></li>
+<li><p><strong>persistence</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, assign filtration values for persistent homology.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The resulting avalanche complex.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>gudhi.SimplexTree</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="avalanche.avalanche_complex_persistence_diagram">
+<span class="sig-prename descclassname"><span class="pre">avalanche.</span></span><span class="sig-name descname"><span class="pre">avalanche_complex_persistence_diagram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#avalanche.avalanche_complex_persistence_diagram" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the persistence diagram of an avalanche complex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>S</strong> (<em>gudhi.SimplexTree</em>) – Simplicial complex represented as a <code class="docutils literal notranslate"><span class="pre">gudhi.SimplexTree</span></code>.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Title for the persistence diagram plot.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="avalanche.is_stable">
+<span class="sig-prename descclassname"><span class="pre">avalanche.</span></span><span class="sig-name descname"><span class="pre">is_stable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out_deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configuration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#avalanche.is_stable" title="Permalink to this definition"></a></dt>
+<dd><p>Determine whether a sandpile configuration is stable.</p>
+<p>A configuration is stable if every vertex contains fewer grains than
+its out-degree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>out_deg</strong> (<em>numpy.ndarray</em>) – Array of vertex out-degrees.</p></li>
+<li><p><strong>configuration</strong> (<em>numpy.ndarray</em>) – Current sandpile configuration.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the configuration is stable, otherwise <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="avalanche.out_degrees_matrix">
+<span class="sig-prename descclassname"><span class="pre">avalanche.</span></span><span class="sig-name descname"><span class="pre">out_degrees_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sinks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#avalanche.out_degrees_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the out-degree of each vertex in a graph.</p>
+<p>The out-degree is computed as the row sum of the adjacency matrix.
+Vertices listed in <code class="docutils literal notranslate"><span class="pre">sinks</span></code> are treated as having an additional
+outgoing edge to the sink vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>M</strong> (<em>numpy.ndarray</em>) – Adjacency matrix of the graph as dense NumPy array.</p></li>
+<li><p><strong>sinks</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – Indices of vertices connected to the sink.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array whose <code class="docutils literal notranslate"><span class="pre">i</span></code>-th entry is the out-degree of vertex <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="avalanche.run_avalanche_sandpile">
+<span class="sig-prename descclassname"><span class="pre">avalanche.</span></span><span class="sig-name descname"><span class="pre">run_avalanche_sandpile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configuration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avalanches</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#avalanche.run_avalanche_sandpile" title="Permalink to this definition"></a></dt>
+<dd><p>Simulate the sandpile model using parallel toppling.</p>
+<p>The simulation proceeds by repeatedly toppling all unstable vertices
+simultaneously until either the requested number of avalanches has
+occurred or the configuration stabilises.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>L</strong> (<em>numpy.ndarray</em>) – Laplacian matrix of the graph.</p></li>
+<li><p><strong>out_deg</strong> (<em>numpy.ndarray</em>) – Array of vertex out-degrees.</p></li>
+<li><p><strong>configuration</strong> (<em>numpy.ndarray</em>) – Initial sandpile configuration.</p></li>
+<li><p><strong>avalanches</strong> (<em>int</em>) – Maximum number of avalanche topplings to perform.</p></li>
+<li><p><strong>display</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, print configurations after each toppling.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>A tuple <code class="docutils literal notranslate"><span class="pre">(configs,</span> <span class="pre">avalanche_firing_sequence)</span></code> where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">configs</span></code> is the list of configurations encountered.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">avalanche_firing_sequence</span></code> records which vertices fired at
+each avalanche step as a binary vector of length <a href="#id1"><span class="problematic" id="id2">|G|</span></a>,
+where position i is 1 iff vertex i topples.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[list, list]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Avalanche Homology’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Jason P. Smith and Henri Riihimaki.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
